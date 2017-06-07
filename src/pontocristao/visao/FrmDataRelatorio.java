@@ -188,7 +188,6 @@ public class FrmDataRelatorio extends javax.swing.JDialog {
             Confirmou = true;
             this.dispose();
         }
-
     }//GEN-LAST:event_BtnConfirmarActionPerformed
 
     private void jRadioCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioCompletoActionPerformed

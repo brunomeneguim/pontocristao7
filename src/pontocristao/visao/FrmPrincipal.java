@@ -445,7 +445,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnSairActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        FrmDataRelatorio frm = FrmDataRelatorio.Mostrar(this, "Relatório de clientes");
+        FrmDataRelatorio frm = FrmDataRelatorio.Mostrar(this, "Relatório de Clientes");
 
         if (frm.Confirmou) {
 
@@ -480,7 +480,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
 
         }
-        
+
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
@@ -492,54 +492,76 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        String relatorio = ".\\Relatorios\\RelatorioFornecedor.jasper";
-        String arquivo = ".\\Relatorios.\\RelatorioFornecedor.pdf";
+        FrmDataRelatorio frm = FrmDataRelatorio.Mostrar(this, "Relatório de Fornecedores");
 
-        try {
-            Properties connectionProps = new Properties();
-            connectionProps.put("user", "root");
-            connectionProps.put("password", "root");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
+        if (frm.Confirmou) {
 
-            JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+            String relatorio = ".\\Relatorios\\RelatorioFornecedor.jasper";
+            String arquivo = ".\\Relatorios.\\RelatorioFornecedor.pdf";
 
-            JRExporter exporter = new JRPdfExporter();
-            exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
-            exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+            try {
+                Properties connectionProps = new Properties();
+                connectionProps.put("user", "root");
+                connectionProps.put("password", "root");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
 
-            exporter.exportReport();
+                HashMap parametros = new HashMap();
 
-            File myFile = new File(arquivo);
-            Desktop.getDesktop().open(myFile);
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                parametros.put("DATA_INICIO", df.format(frm.DataInicio));
+                parametros.put("DATA_FIM", df.format(frm.DataLimite));
 
-        } catch (Exception ex) {
-            Utilidades.MostrarMensagemErro(ex);
+                JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+
+                JRExporter exporter = new JRPdfExporter();
+                exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
+                exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+
+                exporter.exportReport();
+
+                File myFile = new File(arquivo);
+                Desktop.getDesktop().open(myFile);
+
+            } catch (Exception ex) {
+                Utilidades.MostrarMensagemErro(ex);
+            }
         }
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
-        String relatorio = ".\\Relatorios\\RelatorioFilme.jasper";
-        String arquivo = ".\\Relatorios.\\RelatorioFilme.pdf";
+        FrmDataRelatorio frm = FrmDataRelatorio.Mostrar(this, "Relatório de Filmes");
 
-        try {
-            Properties connectionProps = new Properties();
-            connectionProps.put("user", "root");
-            connectionProps.put("password", "root");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
+        if (frm.Confirmou) {
 
-            JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+            String relatorio = ".\\Relatorios\\RelatorioFilme.jasper";
+            String arquivo = ".\\Relatorios.\\RelatorioFilme.pdf";
 
-            JRExporter exporter = new JRPdfExporter();
-            exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
-            exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+            try {
+                Properties connectionProps = new Properties();
+                connectionProps.put("user", "root");
+                connectionProps.put("password", "root");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
 
-            exporter.exportReport();
+                HashMap parametros = new HashMap();
 
-            File myFile = new File(arquivo);
-            Desktop.getDesktop().open(myFile);
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                parametros.put("DATA_INICIO", df.format(frm.DataInicio));
+                parametros.put("DATA_FIM", df.format(frm.DataLimite));
 
-        } catch (Exception ex) {
-            Utilidades.MostrarMensagemErro(ex);
+                JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+
+                JRExporter exporter = new JRPdfExporter();
+                exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
+                exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+
+                exporter.exportReport();
+
+                File myFile = new File(arquivo);
+                Desktop.getDesktop().open(myFile);
+
+            } catch (Exception ex) {
+                Utilidades.MostrarMensagemErro(ex);
+            }
         }
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
@@ -552,28 +574,39 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        String relatorio = ".\\Relatorios\\RelatorioFuncionario.jasper";
-        String arquivo = ".\\Relatorios.\\RelatorioFuncionario.pdf";
+        FrmDataRelatorio frm = FrmDataRelatorio.Mostrar(this, "Relatório de Funcionários");
 
-        try {
-            Properties connectionProps = new Properties();
-            connectionProps.put("user", "root");
-            connectionProps.put("password", "root");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
+        if (frm.Confirmou) {
 
-            JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+            String relatorio = ".\\Relatorios\\RelatorioFuncionario.jasper";
+            String arquivo = ".\\Relatorios.\\RelatorioFuncionario.pdf";
 
-            JRExporter exporter = new JRPdfExporter();
-            exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
-            exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+            try {
+                Properties connectionProps = new Properties();
+                connectionProps.put("user", "root");
+                connectionProps.put("password", "root");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
 
-            exporter.exportReport();
+                HashMap parametros = new HashMap();
 
-            File myFile = new File(arquivo);
-            Desktop.getDesktop().open(myFile);
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                parametros.put("DATA_INICIO", df.format(frm.DataInicio));
+                parametros.put("DATA_FIM", df.format(frm.DataLimite));
 
-        } catch (Exception ex) {
-            Utilidades.MostrarMensagemErro(ex);
+                JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+
+                JRExporter exporter = new JRPdfExporter();
+                exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
+                exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+
+                exporter.exportReport();
+
+                File myFile = new File(arquivo);
+                Desktop.getDesktop().open(myFile);
+
+            } catch (Exception ex) {
+                Utilidades.MostrarMensagemErro(ex);
+            }
         }
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
@@ -591,132 +624,187 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
     private void jMenuItem25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem25ActionPerformed
-        String relatorio = ".\\Relatorios\\RelatorioContaPagar.jasper";
-        String arquivo = ".\\Relatorios.\\RelatorioContaPagar.pdf";
+        FrmDataRelatorio frm = FrmDataRelatorio.Mostrar(this, "Relatório de Contas a Pagar");
 
-        try {
-            Properties connectionProps = new Properties();
-            connectionProps.put("user", "root");
-            connectionProps.put("password", "root");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
+        if (frm.Confirmou) {
 
-            JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+            String relatorio = ".\\Relatorios\\RelatorioContaPagar.jasper";
+            String arquivo = ".\\Relatorios.\\RelatorioContaPagar.pdf";
 
-            JRExporter exporter = new JRPdfExporter();
-            exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
-            exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+            try {
+                Properties connectionProps = new Properties();
+                connectionProps.put("user", "root");
+                connectionProps.put("password", "root");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
 
-            exporter.exportReport();
+                HashMap parametros = new HashMap();
 
-            File myFile = new File(arquivo);
-            Desktop.getDesktop().open(myFile);
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                parametros.put("DATA_INICIO", df.format(frm.DataInicio));
+                parametros.put("DATA_FIM", df.format(frm.DataLimite));
 
-        } catch (Exception ex) {
-            Utilidades.MostrarMensagemErro(ex);
+                JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+
+                JRExporter exporter = new JRPdfExporter();
+                exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
+                exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+
+                exporter.exportReport();
+
+                File myFile = new File(arquivo);
+                Desktop.getDesktop().open(myFile);
+
+            } catch (Exception ex) {
+                Utilidades.MostrarMensagemErro(ex);
+            }
         }
     }//GEN-LAST:event_jMenuItem25ActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        String relatorio = ".\\Relatorios\\RelatorioProduto.jasper";
-        String arquivo = ".\\Relatorios.\\RelatorioProduto.pdf";
+        FrmDataRelatorio frm = FrmDataRelatorio.Mostrar(this, "Relatório de Produtos");
 
-        try {
-            Properties connectionProps = new Properties();
-            connectionProps.put("user", "root");
-            connectionProps.put("password", "root");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
+        if (frm.Confirmou) {
 
-            JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+            String relatorio = ".\\Relatorios\\RelatorioProduto.jasper";
+            String arquivo = ".\\Relatorios.\\RelatorioProduto.pdf";
 
-            JRExporter exporter = new JRPdfExporter();
-            exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
-            exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+            try {
+                Properties connectionProps = new Properties();
+                connectionProps.put("user", "root");
+                connectionProps.put("password", "root");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
 
-            exporter.exportReport();
+                HashMap parametros = new HashMap();
 
-            File myFile = new File(arquivo);
-            Desktop.getDesktop().open(myFile);
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                parametros.put("DATA_INICIO", df.format(frm.DataInicio));
+                parametros.put("DATA_FIM", df.format(frm.DataLimite));
 
-        } catch (Exception ex) {
-            Utilidades.MostrarMensagemErro(ex);
+                JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+
+                JRExporter exporter = new JRPdfExporter();
+                exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
+                exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+
+                exporter.exportReport();
+
+                File myFile = new File(arquivo);
+                Desktop.getDesktop().open(myFile);
+
+            } catch (Exception ex) {
+                Utilidades.MostrarMensagemErro(ex);
+            }
         }
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
-        String relatorio = ".\\Relatorios\\RelatorioLocacao.jasper";
-        String arquivo = ".\\Relatorios.\\RelatorioLocacao.pdf";
+        FrmDataRelatorio frm = FrmDataRelatorio.Mostrar(this, "Relatório de Locação");
 
-        try {
-            Properties connectionProps = new Properties();
-            connectionProps.put("user", "root");
-            connectionProps.put("password", "root");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
+        if (frm.Confirmou) {
 
-            JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+            String relatorio = ".\\Relatorios\\RelatorioLocacao.jasper";
+            String arquivo = ".\\Relatorios.\\RelatorioLocacao.pdf";
 
-            JRExporter exporter = new JRPdfExporter();
-            exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
-            exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+            try {
+                Properties connectionProps = new Properties();
+                connectionProps.put("user", "root");
+                connectionProps.put("password", "root");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
 
-            exporter.exportReport();
+                HashMap parametros = new HashMap();
 
-            File myFile = new File(arquivo);
-            Desktop.getDesktop().open(myFile);
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                parametros.put("DATA_INICIO", df.format(frm.DataInicio));
+                parametros.put("DATA_FIM", df.format(frm.DataLimite));
 
-        } catch (Exception ex) {
-            Utilidades.MostrarMensagemErro(ex);
+                JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+
+                JRExporter exporter = new JRPdfExporter();
+                exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
+                exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+
+                exporter.exportReport();
+
+                File myFile = new File(arquivo);
+                Desktop.getDesktop().open(myFile);
+
+            } catch (Exception ex) {
+                Utilidades.MostrarMensagemErro(ex);
+            }
         }
     }//GEN-LAST:event_jMenuItem24ActionPerformed
 
     private void jMenuItem23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem23ActionPerformed
-        String relatorio = ".\\Relatorios\\RelatorioVenda.jasper";
-        String arquivo = ".\\Relatorios.\\RelatorioVenda.pdf";
+        FrmDataRelatorio frm = FrmDataRelatorio.Mostrar(this, "Relatório de Vendas");
 
-        try {
-            Properties connectionProps = new Properties();
-            connectionProps.put("user", "root");
-            connectionProps.put("password", "root");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
+        if (frm.Confirmou) {
 
-            JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+            String relatorio = ".\\Relatorios\\RelatorioVenda.jasper";
+            String arquivo = ".\\Relatorios.\\RelatorioVenda.pdf";
 
-            JRExporter exporter = new JRPdfExporter();
-            exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
-            exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+            try {
+                Properties connectionProps = new Properties();
+                connectionProps.put("user", "root");
+                connectionProps.put("password", "root");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
 
-            exporter.exportReport();
+                HashMap parametros = new HashMap();
 
-            File myFile = new File(arquivo);
-            Desktop.getDesktop().open(myFile);
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                parametros.put("DATA_INICIO", df.format(frm.DataInicio));
+                parametros.put("DATA_FIM", df.format(frm.DataLimite));
 
-        } catch (Exception ex) {
-            Utilidades.MostrarMensagemErro(ex);
+                JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+
+                JRExporter exporter = new JRPdfExporter();
+                exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
+                exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+
+                exporter.exportReport();
+
+                File myFile = new File(arquivo);
+                Desktop.getDesktop().open(myFile);
+
+            } catch (Exception ex) {
+                Utilidades.MostrarMensagemErro(ex);
+            }
         }
     }//GEN-LAST:event_jMenuItem23ActionPerformed
 
     private void jMenuItem26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem26ActionPerformed
-        String relatorio = ".\\Relatorios\\RelatorioCaixa.jasper";
-        String arquivo = ".\\Relatorios.\\RelatorioCaixa.pdf";
+        FrmDataRelatorio frm = FrmDataRelatorio.Mostrar(this, "Relatório de Caixa");
 
-        try {
-            Properties connectionProps = new Properties();
-            connectionProps.put("user", "root");
-            connectionProps.put("password", "root");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
+        if (frm.Confirmou) {
 
-            JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+            String relatorio = ".\\Relatorios\\RelatorioCaixa.jasper";
+            String arquivo = ".\\Relatorios.\\RelatorioCaixa.pdf";
 
-            JRExporter exporter = new JRPdfExporter();
-            exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
-            exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+            try {
+                Properties connectionProps = new Properties();
+                connectionProps.put("user", "root");
+                connectionProps.put("password", "root");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pontocristao", connectionProps);
 
-            exporter.exportReport();
+                HashMap parametros = new HashMap();
 
-            File myFile = new File(arquivo);
-            Desktop.getDesktop().open(myFile);
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                parametros.put("DATA_INICIO", df.format(frm.DataInicio));
+                parametros.put("DATA_FIM", df.format(frm.DataLimite));
 
-        } catch (Exception ex) {
-            Utilidades.MostrarMensagemErro(ex);
+                JasperPrint jp = JasperFillManager.fillReport(relatorio, new HashMap(), conn);
+
+                JRExporter exporter = new JRPdfExporter();
+                exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, arquivo);
+                exporter.setParameter(JRExporterParameter.JASPER_PRINT, jp);
+
+                exporter.exportReport();
+
+                File myFile = new File(arquivo);
+                Desktop.getDesktop().open(myFile);
+
+            } catch (Exception ex) {
+                Utilidades.MostrarMensagemErro(ex);
+            }
         }
     }//GEN-LAST:event_jMenuItem26ActionPerformed
 
