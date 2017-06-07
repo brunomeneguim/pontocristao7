@@ -89,16 +89,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuItem23 = new javax.swing.JMenuItem();
         jMenuItem26 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem16 = new javax.swing.JMenuItem();
         jMenuItem17 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem18 = new javax.swing.JMenuItem();
-        jMenuItem19 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Principal");
 
-        BtnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Sair.png"))); // NOI18N
+        BtnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/BtnSairPrincipal.png"))); // NOI18N
         BtnSair.setText("Sair");
         BtnSair.setPreferredSize(new java.awt.Dimension(139, 65));
         BtnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -345,15 +343,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Ajuda.png"))); // NOI18N
         jMenu5.setText("Ajuda");
 
-        jMenuItem16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Sobre.png"))); // NOI18N
-        jMenuItem16.setText("Sobre");
-        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem16ActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jMenuItem16);
-
         jMenuItem17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Contato.png"))); // NOI18N
         jMenuItem17.setText("Contato");
         jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
@@ -365,7 +354,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu5);
 
-        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Sair.png"))); // NOI18N
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/BtnSairPrincipal.png"))); // NOI18N
         jMenu6.setText("Sair");
 
         jMenuItem18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/SairSistema.png"))); // NOI18N
@@ -376,10 +365,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu6.add(jMenuItem18);
-
-        jMenuItem19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Logoff.png"))); // NOI18N
-        jMenuItem19.setText("Logoff");
-        jMenu6.add(jMenuItem19);
 
         jMenuBar1.add(jMenu6);
 
@@ -565,10 +550,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
         FrmContato frmContato = FrmContato.Mostrar(this);
     }//GEN-LAST:event_jMenuItem17ActionPerformed
-
-    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
-        FrmSobre frmSobre = FrmSobre.Mostrar(this);
-    }//GEN-LAST:event_jMenuItem16ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         String relatorio = ".\\Relatorios\\RelatorioFuncionario.jasper";
@@ -804,10 +785,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
-    private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem21;
