@@ -2,6 +2,7 @@ package pontocristao.visao;
 
 import java.awt.*;
 import java.text.NumberFormat;
+import java.util.Date;
 import java.util.Locale;
 import javax.swing.JOptionPane;
 import javax.swing.text.NumberFormatter;
@@ -36,8 +37,9 @@ public class FrmCadastrarProduto extends javax.swing.JDialog {
         setLocationRelativeTo(null);
 
         txtCodigo.setEnabled(false);
+
+        jcDataCadastro.setDate(new Date());
         jcDataCadastro.setEnabled(false);
-        txtCodigoBarra.setEnabled(false);
 
         txtNomeProduto.requestFocus();
 
@@ -89,7 +91,6 @@ public class FrmCadastrarProduto extends javax.swing.JDialog {
 
     private void AtualizarCampos() {
         txtCodigo.setText(String.valueOf(controle.getProduto().getId()));
-        txtCodigoBarra.setText(controle.getProduto().getCodigoBarra());
         jcDataCadastro.setDate(controle.getProduto().getDataCadastro());
         txtNomeProduto.setText(controle.getProduto().getNome());
         jspValor.setValue(controle.getProduto().getValorVenda());
@@ -99,7 +100,6 @@ public class FrmCadastrarProduto extends javax.swing.JDialog {
     }
 
     private void AtualizarModelo() {
-        controle.getProduto().setCodigoBarra(txtCodigoBarra.getText());
         controle.getProduto().setNome(txtNomeProduto.getText());
         controle.getProduto().setValorVenda((Double) jspValor.getValue());
         controle.getProduto().setQuantidade((Integer) jspQuantidade.getValue());
@@ -155,8 +155,6 @@ public class FrmCadastrarProduto extends javax.swing.JDialog {
 
         lCodigoProduto = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
-        lCodigoBarra = new javax.swing.JLabel();
-        txtCodigoBarra = new javax.swing.JFormattedTextField();
         lDataCadastro = new javax.swing.JLabel();
         jcDataCadastro = new com.toedter.calendar.JDateChooser();
         lNomeProduto = new javax.swing.JLabel();
@@ -180,8 +178,6 @@ public class FrmCadastrarProduto extends javax.swing.JDialog {
         txtCodigo.setEditable(false);
         txtCodigo.setBackground(new java.awt.Color(255, 255, 255));
         txtCodigo.setEnabled(false);
-
-        lCodigoBarra.setText("Código de Barras");
 
         lDataCadastro.setText("Data de Cadastro");
 
@@ -233,11 +229,7 @@ public class FrmCadastrarProduto extends javax.swing.JDialog {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lCodigoProduto))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtCodigoBarra, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lCodigoBarra))
-                            .addGap(18, 18, 18)
+                            .addGap(186, 186, 186)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lDataCadastro)
                                 .addComponent(jcDataCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -270,13 +262,10 @@ public class FrmCadastrarProduto extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lCodigoProduto)
-                    .addComponent(lCodigoBarra)
                     .addComponent(lDataCadastro))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtCodigoBarra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jcDataCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lNomeProduto)
@@ -383,7 +372,6 @@ public class FrmCadastrarProduto extends javax.swing.JDialog {
     private com.toedter.calendar.JDateChooser jcDataCadastro;
     private javax.swing.JSpinner jspQuantidade;
     private javax.swing.JSpinner jspValor;
-    private javax.swing.JLabel lCodigoBarra;
     private javax.swing.JLabel lCodigoProduto;
     private javax.swing.JLabel lDataCadastro;
     private javax.swing.JLabel lFornecedor;
@@ -392,7 +380,6 @@ public class FrmCadastrarProduto extends javax.swing.JDialog {
     private javax.swing.JLabel lTipoProduto;
     private javax.swing.JLabel lValorVenda;
     private javax.swing.JTextField txtCodigo;
-    private javax.swing.JFormattedTextField txtCodigoBarra;
     private javax.swing.JTextField txtNomeProduto;
     // End of variables declaration//GEN-END:variables
 }

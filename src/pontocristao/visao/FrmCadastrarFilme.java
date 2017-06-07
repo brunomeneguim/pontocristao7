@@ -1,6 +1,7 @@
 package pontocristao.visao;
 
 import java.awt.*;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import pontocristao.controle.*;
 import pontocristao.modelo.*;
@@ -33,6 +34,8 @@ public class FrmCadastrarFilme extends javax.swing.JDialog {
         setLocationRelativeTo(null);
 
         txtCodigo.setEnabled(false);
+
+        jcDataCadastro.setDate(new Date());
         jcDataCadastro.setEnabled(false);
 
         txtNomeProduto.requestFocus();

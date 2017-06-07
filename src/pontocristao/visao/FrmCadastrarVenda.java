@@ -43,6 +43,7 @@ public class FrmCadastrarVenda extends javax.swing.JDialog {
 
         setLocationRelativeTo(null);
 
+        jcDataLocacao.setDate(new Date());
         jcDataLocacao.setEnabled(false);
 
         cbxCliente.requestFocus();
@@ -86,7 +87,6 @@ public class FrmCadastrarVenda extends javax.swing.JDialog {
 
         txtFuncionario.setEnabled(false);
         jcDataLocacao.setEnabled(false);
-        ckbPago.setEnabled(false);
         jspValor.setEnabled(false);
 
         cbxCliente.setSelectedIndex(-1);
@@ -146,7 +146,6 @@ public class FrmCadastrarVenda extends javax.swing.JDialog {
         txtFuncionario.setText(getVenda().getFuncionario().getNome());
         jcDataLocacao.setDate(getVenda().getData());
         jspValor.setValue(getVenda().getValorTotal());
-        ckbPago.setSelected(getVenda().getPago());
     }
 
     private void AtualizarModelo() {
@@ -209,7 +208,6 @@ public class FrmCadastrarVenda extends javax.swing.JDialog {
         tblFilmes = new javax.swing.JTable();
         BtnAdicionarProduto = new javax.swing.JButton();
         cbxCliente = new javax.swing.JComboBox<>();
-        ckbPago = new javax.swing.JCheckBox();
         cbxProduto = new javax.swing.JComboBox<>();
         lProduto = new javax.swing.JLabel();
         jspQuantidade = new javax.swing.JSpinner();
@@ -283,8 +281,6 @@ public class FrmCadastrarVenda extends javax.swing.JDialog {
             }
         });
 
-        ckbPago.setText("Pago");
-
         lProduto.setText("Produto");
 
         jspQuantidade.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
@@ -314,20 +310,18 @@ public class FrmCadastrarVenda extends javax.swing.JDialog {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lNomeProduto)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lFuncionario)
-                                        .addGap(285, 285, 285)
-                                        .addComponent(lDataLocacao))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lFuncionario))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jcDataLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lDataLocacao)
+                                            .addComponent(jcDataLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lValorVenda)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jspValor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(ckbPago))))
+                                    .addComponent(jspValor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(67, 67, 67))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -353,9 +347,7 @@ public class FrmCadastrarVenda extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jcDataLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jspValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ckbPago)))
+                    .addComponent(jspValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lNomeProduto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -526,7 +518,6 @@ public class FrmCadastrarVenda extends javax.swing.JDialog {
     private javax.swing.JButton BtnConfirmar1;
     private javax.swing.JComboBox<String> cbxCliente;
     private javax.swing.JComboBox<String> cbxProduto;
-    private javax.swing.JCheckBox ckbPago;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

@@ -2,6 +2,7 @@ package pontocristao.visao;
 
 import java.awt.*;
 import java.util.Arrays;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import pontocristao.controle.ControleFuncionario;
 import pontocristao.modelo.Funcionario;
@@ -35,6 +36,8 @@ public class FrmCadastrarFuncionario extends javax.swing.JDialog {
 
         txtLogin.requestFocus();
         txtCodigo.setEnabled(false);
+
+        jcDataCadastro.setDate(new Date());
         jcDataCadastro.setEnabled(false);
 
         Utilidades.setMascara("#####-###", txtCep);

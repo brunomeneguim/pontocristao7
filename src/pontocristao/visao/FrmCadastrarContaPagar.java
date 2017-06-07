@@ -32,8 +32,8 @@ public class FrmCadastrarContaPagar extends javax.swing.JDialog {
 
         setLocationRelativeTo(null);
 
-        jcData.setEnabled(false);
         jcData.setDate(new Date());
+        jcData.setEnabled(false);
 
         jcDataVencimento.requestFocus();
 

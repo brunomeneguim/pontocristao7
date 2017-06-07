@@ -33,12 +33,7 @@
                               <Component id="txtCodigo" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
                               <Component id="lCodigoProduto" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtCodigoBarra" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                              <Component id="lCodigoBarra" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="lDataCadastro" min="-2" max="-2" attributes="0"/>
                               <Component id="jcDataCadastro" min="-2" pref="150" max="-2" attributes="0"/>
@@ -83,15 +78,11 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lCodigoProduto" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lCodigoBarra" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lDataCadastro" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtCodigoBarra" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="txtCodigo" min="-2" max="-2" attributes="0"/>
                   <Component id="jcDataCadastro" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -138,13 +129,6 @@
         </Property>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lCodigoBarra">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="C&#xf3;digo de Barras"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JFormattedTextField" name="txtCodigoBarra">
     </Component>
     <Component class="javax.swing.JLabel" name="lDataCadastro">
       <Properties>
