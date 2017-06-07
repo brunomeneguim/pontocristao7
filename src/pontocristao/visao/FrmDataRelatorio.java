@@ -49,7 +49,7 @@ public class FrmDataRelatorio extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jcDataLimite = new com.toedter.calendar.JDateChooser();
         jPanel1 = new javax.swing.JPanel();
-        jRadioTudo = new javax.swing.JRadioButton();
+        jRadioCompleto = new javax.swing.JRadioButton();
         jRadioPeriodo = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -77,10 +77,10 @@ public class FrmDataRelatorio extends javax.swing.JDialog {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jRadioTudo.setText("Tudo");
-        jRadioTudo.addActionListener(new java.awt.event.ActionListener() {
+        jRadioCompleto.setText("Completo");
+        jRadioCompleto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioTudoActionPerformed(evt);
+                jRadioCompletoActionPerformed(evt);
             }
         });
 
@@ -97,7 +97,7 @@ public class FrmDataRelatorio extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jRadioTudo)
+                .addComponent(jRadioCompleto)
                 .addGap(18, 18, 18)
                 .addComponent(jRadioPeriodo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -107,7 +107,7 @@ public class FrmDataRelatorio extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioTudo)
+                    .addComponent(jRadioCompleto)
                     .addComponent(jRadioPeriodo))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -117,32 +117,33 @@ public class FrmDataRelatorio extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(BtnConfirmar)
-                        .addGap(18, 18, 18)
-                        .addComponent(BtnCancelar))
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jcDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jcDataLimite, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(BtnConfirmar)
+                                .addGap(18, 18, 18)
+                                .addComponent(BtnCancelar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jcDataInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jcDataLimite, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(9, 9, 9)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -190,15 +191,15 @@ public class FrmDataRelatorio extends javax.swing.JDialog {
 
     }//GEN-LAST:event_BtnConfirmarActionPerformed
 
-    private void jRadioTudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioTudoActionPerformed
+    private void jRadioCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioCompletoActionPerformed
         jRadioPeriodo.setSelected(false);
 
         jcDataInicio.setEnabled(false);
         jcDataLimite.setEnabled(false);
-    }//GEN-LAST:event_jRadioTudoActionPerformed
+    }//GEN-LAST:event_jRadioCompletoActionPerformed
 
     private void jRadioPeriodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioPeriodoActionPerformed
-        jRadioTudo.setSelected(false);
+        jRadioCompleto.setSelected(false);
 
         jcDataInicio.setEnabled(true);
         jcDataLimite.setEnabled(true);
@@ -255,8 +256,8 @@ public class FrmDataRelatorio extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jRadioCompleto;
     private javax.swing.JRadioButton jRadioPeriodo;
-    private javax.swing.JRadioButton jRadioTudo;
     private com.toedter.calendar.JDateChooser jcDataInicio;
     private com.toedter.calendar.JDateChooser jcDataLimite;
     // End of variables declaration//GEN-END:variables
