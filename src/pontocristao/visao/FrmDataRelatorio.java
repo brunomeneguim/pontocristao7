@@ -182,7 +182,7 @@ public class FrmDataRelatorio extends javax.swing.JDialog {
         DataInicio = jcDataInicio.getDate();
         DataLimite = jcDataLimite.getDate();
 
-        if (DataInicio == null || DataLimite == null) {
+        if (jRadioPeriodo.isSelected() && (DataInicio == null || DataLimite == null)) {
             JOptionPane.showMessageDialog(null, "A data de início e a data limite devem ser preenchidas.");
         } else {
             Confirmou = true;
@@ -231,6 +231,8 @@ public class FrmDataRelatorio extends javax.swing.JDialog {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FrmDataRelatorio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
