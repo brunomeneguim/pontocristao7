@@ -62,22 +62,22 @@ public class FrmPrincipal extends javax.swing.JFrame {
         lImagem = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem15 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem20 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem20 = new javax.swing.JMenuItem();
         jMenuItem21 = new javax.swing.JMenuItem();
         jMenuItem22 = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem15 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
@@ -116,16 +116,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Opcoes.png"))); // NOI18N
         jMenu1.setText("Opções");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/CadastrarCliente.png"))); // NOI18N
-        jMenuItem1.setText("Cliente");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem1);
-
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Funcionario.png"))); // NOI18N
         jMenuItem2.setText("Funcionário");
@@ -136,6 +126,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem2);
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/CadastrarCliente.png"))); // NOI18N
+        jMenuItem1.setText("Cliente");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Fornecedor.png"))); // NOI18N
         jMenuItem4.setText("Fornecedor");
@@ -145,39 +145,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem4);
-
-        jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Contas.png"))); // NOI18N
-        jMenu7.setText("Conta a Pagar");
-
-        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/BtnContaPagar.png"))); // NOI18N
-        jMenuItem6.setText("Cadastrar Conta a Pagar");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
-            }
-        });
-        jMenu7.add(jMenuItem6);
-
-        jMenuItem15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/BtnTipoContaPagar.png"))); // NOI18N
-        jMenuItem15.setText("Cadastrar Tipo de Conta a Pagar");
-        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem15ActionPerformed(evt);
-            }
-        });
-        jMenu7.add(jMenuItem15);
-
-        jMenu1.add(jMenu7);
-
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/TabelaDePreco.png"))); // NOI18N
-        jMenuItem3.setText("Tabela de Preço");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem3);
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Filme.png"))); // NOI18N
         jMenu3.setText("Filme");
@@ -202,6 +169,26 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jMenu1.add(jMenu3);
 
+        jMenuItem20.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Locacao.png"))); // NOI18N
+        jMenuItem20.setText("Locação");
+        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem20ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem20);
+
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/TabelaDePreco.png"))); // NOI18N
+        jMenuItem3.setText("Tabela de Preço");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
+
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Produto.png"))); // NOI18N
         jMenu4.setText("Produto");
 
@@ -225,15 +212,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jMenu1.add(jMenu4);
 
-        jMenuItem20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Locacao.png"))); // NOI18N
-        jMenuItem20.setText("Locação");
-        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem20ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem20);
-
         jMenuItem21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Venda.png"))); // NOI18N
         jMenuItem21.setText("Venda");
         jMenuItem21.addActionListener(new java.awt.event.ActionListener() {
@@ -251,6 +229,29 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem22);
+
+        jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/Contas.png"))); // NOI18N
+        jMenu7.setText("Conta a Pagar");
+
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/BtnContaPagar.png"))); // NOI18N
+        jMenuItem6.setText("Cadastrar Conta a Pagar");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem6);
+
+        jMenuItem15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pontocristao/icones/BtnTipoContaPagar.png"))); // NOI18N
+        jMenuItem15.setText("Cadastrar Tipo de Conta a Pagar");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem15);
+
+        jMenu1.add(jMenu7);
 
         jMenuBar1.add(jMenu1);
 
